@@ -23,7 +23,7 @@ st.markdown(
         /* Forçar o tamanho e a cor da barra lateral */
         [data-testid="stSidebar"] {
             background-color: #191a1f !important;
-            width: 70px !important; /* Reduzir largura */
+            width: 20% !important; /* Reduzir largura */
         }
 
         /* Redimensionar a imagem na barra lateral */
@@ -36,7 +36,7 @@ st.markdown(
         /* Centralizar e ajustar o header */
         .header-container {
             text-align: center;
-            font-size: 24px;
+            font-size: 2em;
             margin-bottom: 20px;
         }
 
