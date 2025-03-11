@@ -5,6 +5,21 @@ st.set_page_config(layout="wide")
 st.markdown(
     """
     <style>
+        .responsive-iframe {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* Proporção de 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
         /* Forçar o tamanho e a cor da barra lateral */
         [data-testid="stSidebar"] {
             background-color: #191a1f !important;
@@ -63,18 +78,23 @@ tab1, tab2 = st.tabs(["BK ARTS", "BK ARTS CRIATIVOS"])
 with tab1:
     st.markdown(
         """
-        <iframe title="BK ARTS" width="843" height="540" src="https://app.powerbi.com/view?r=eyJrIjoiYjA0ZjEyZTItYzIxOS00MjY4LTljYTEtYTUwMjMxYTAxMmFhIiwidCI6ImFiYThhNDc3LTE0MGItNDNiOC04MGQzLWYxOTQwNGVhMTc0YyJ9
-" frameborder="0" allowFullScreen="true"></iframe>
+        <div class="responsive-iframe">
+            <iframe title="BK ARTS" src="https://app.powerbi.com/view?r=eyJrIjoiYjA0ZjEyZTItYzIxOS00MjY4LTljYTEtYTUwMjMxYTAxMmFhIiwidCI6ImFiYThhNDc3LTE0MGItNDNiOC04MGQzLWYxOTQwNGVhMTc0YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
         """,
         unsafe_allow_html=True,
     )
 
+
 with tab2:
     st.markdown(
         """
-        <iframe title="BK ARTS - Criativos" width="853" height="540" src="https://app.powerbi.com/view?r=eyJrIjoiNjZkNzZjYjUtYzJiMi00NjMxLTgzNGEtY2Y0MjdhMTQxNTA2IiwidCI6ImFiYThhNDc3LTE0MGItNDNiOC04MGQzLWYxOTQwNGVhMTc0YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+        <div class="responsive-iframe">
+            <iframe title="BK ARTS - Criativos" src="https://app.powerbi.com/view?r=eyJrIjoiNjZkNzZjYjUtYzJiMi00NjMxLTgzNGEtY2Y0MjdhMTQxNTA2IiwidCI6ImFiYThhNDc3LTE0MGItNDNiOC04MGQzLWYxOTQwNGVhMTc0YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
         """,
-        unsafe_allow_html=True,)
+        unsafe_allow_html=True,
+    )
 
 
 planilhas = {
